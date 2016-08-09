@@ -18,6 +18,8 @@ gem 'bcrypt'
 
 gem 'pry-byebug'
 
+gem 'thin'
+
 group :test do
   gem 'shoulda-matchers'
   gem 'rack-test'
