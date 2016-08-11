@@ -6,7 +6,7 @@ end
 
 # Sessions CREATE
 
-post '/session' do
+post '/sessions' do
   @user = User.find_by(email: params[:user][:email])
   if @user
     if @user.authenticate?(params[:user][:password])
