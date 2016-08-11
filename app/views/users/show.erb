@@ -1,1 +1,11 @@
-<h1>Welcome back to Doodle Life, <%= @user.username.capitalize %> </h1>
+<main class="user-home">
+	<h1 class="headlines">Welcome back to Doodle Life, <%= @user.username.capitalize %> </h1>
+	<br>
+	<h2>Where doodles are encouraged</h2>
+	<br>
+	<form action="/sessions/<%= @user.id %>" method="POST">
+		<input type="hidden" name="_method" value="DELETE">
+		<input type="submit" value="Logout">
+	</form>
+</main>
+
