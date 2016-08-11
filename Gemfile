@@ -1,3 +1,5 @@
+ruby '2.2.4'
+
 source 'https://rubygems.org'
 
 # PostgreSQL driver
@@ -17,6 +19,8 @@ gem 'shotgun'
 gem 'bcrypt'
 
 gem 'pry-byebug'
+
+gem 'thin'
 
 group :test do
   gem 'shoulda-matchers'
