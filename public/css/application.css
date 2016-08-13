@@ -7,11 +7,12 @@ section {
   border: 1px solid purple;
   padding-top: 20px;
   padding-bottom: 20px;
+  padding-left: 350px;
 }
 
 /* This sets the canvas! OMC!! */
 canvas {
-  display: inline-block; /*This block makes it so I can center it*/
+  display: inline-block; /*This block makes it so I can make my divs and canvas side by side*/
   border: 1px solid black;
   margin: 10px auto 0px; /*This makes it so that it has a top margin of 10px, auto left/right margin and 0px for bottom*/ 
 }
@@ -20,11 +21,63 @@ canvas {
 	/*Styling for drawing tools to the left of the canvas*/
 	display: inline-block;
 	border: 1px solid blue; /*temp border so I can see what I am moving and where*/
+	width: 200px;
+	margin: 2px auto;
 }
 
 #drawingToolsRight {
 	/*Styling for drawing tools to the right of the canvas*/
 	display: inline-block;
 	border: 1px solid blue; 
+	margin: 2px auto;
+	width: 200px;
 }
+
+#colors {
+	/*Styling for div where actual color buttons live*/
+}
+
+#colors button {
+	width: 10%;
+	height: 100px;
+	margin-top: 300px;
+	padding: 2px;
+}
+
+/*consider adding a hover option with jquery rather than css!!*/
+
+#black { background: black; }
+#yellow { background: yellow; }
+#pink { background: pink; }
+#green { background: green; }
+#blue { background: blue; }
+#purple { background: purple; }
+
+#otherTools {
+	width: 35%;
+	height: 30px;
+	padding: 2px;
+	background: black;
+}
+
+#otherTools button {
+	margin-top: 5px;
+	margin-left: 5px;
+	background: #ffffff;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
