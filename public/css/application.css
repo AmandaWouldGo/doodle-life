@@ -4,14 +4,27 @@
 /* This sets the section of the app with a bit of padding at the top and bottom. It has a border for now
 so that I know where I am on the page. I may change this or add a background color*/
 section {
-    border: 1px solid purple;
-    padding-top: 20px;
-    padding-bottom: 20px;
+  border: 1px solid purple;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 /* This sets the canvas! OMC!! */
 canvas {
-    display: block; /*This block makes it so I can center it*/
-    border: 1px solid black;
-    margin: 10px auto 0px; /*This makes it so that it has a top margin of 10px, auto left/right margin and 0px for bottom*/ 
+  display: inline-block; /*This block makes it so I can center it*/
+  border: 1px solid black;
+  margin: 10px auto 0px; /*This makes it so that it has a top margin of 10px, auto left/right margin and 0px for bottom*/ 
 }
+
+#drawingToolsLeft {
+	/*Styling for drawing tools to the left of the canvas*/
+	display: inline-block;
+	border: 1px solid blue; /*temp border so I can see what I am moving and where*/
+}
+
+#drawingToolsRight {
+	/*Styling for drawing tools to the right of the canvas*/
+	display: inline-block;
+	border: 1px solid blue; 
+}
+
