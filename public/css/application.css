@@ -17,7 +17,7 @@ canvas {
   margin: 10px auto 0px; /*This makes it so that it has a top margin of 10px, auto left/right margin and 0px for bottom*/ 
 }
 
-#drawingToolsLeft {
+#drawing-tools-left {
 	/*Styling for drawing tools to the left of the canvas*/
 	display: inline-block;
 	border: 1px solid blue; /*temp border so I can see what I am moving and where*/
@@ -25,7 +25,7 @@ canvas {
 	margin: 2px auto;
 }
 
-#drawingToolsRight {
+#drawing-tools-right {
 	/*Styling for drawing tools to the right of the canvas*/
 	display: inline-block;
 	border: 1px solid blue; 
@@ -46,21 +46,21 @@ canvas {
 
 /*consider adding a hover option with jquery rather than css!!*/
 
-#black { background: black; }
+#black { background: #000000; }
 #yellow { background: #f1c40f; }
 #red { background: #e74c3c; }
 #green { background: #2ecc71; }
 #blue { background: #2980b9; }
 #purple { background: #8e44ad; }
 
-#otherTools {
+#other-tools {
 	width: 35%;
 	height: 30px;
 	padding: 2px;
 	background: black;
 }
 
-#otherTools button {
+#other-tools button {
 	margin-top: 5px;
 	margin-left: 5px;
 	background: #ffffff;

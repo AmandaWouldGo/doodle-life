@@ -3,6 +3,7 @@ $(document).ready(function() {
   // This guarantees that any elements we bind to will exist on the page
   // when we try to bind to them
   colorPick();
+  clearAll();
   // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
 });
 
@@ -39,9 +40,15 @@ function draw(event) {
 var colorPick = function() {
   $('.button-color').on("click", function(event) {
   	event.preventDefault();
-  	var color = $(this).val();
-  	context.strokeStyle = color;
-  	console.log("it worked!");
-
+  	var color = $(this).val(); // this = the button that was clicked and finds its value which is a hex color
+  	context.strokeStyle = color; // reset the stroke style color to hex color of button
   });
 };
+
+var clearAll = function() {
+  $('#clear-canvas').mousedown(function(event) {
+  	event.preventDefault();
+  	context.clearRect(0, 0, canvas.width, canvas.height)
+  	console.log("It is working!");
+  });
+}
