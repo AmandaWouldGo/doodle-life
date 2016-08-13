@@ -2,7 +2,7 @@ $(document).ready(function() {
   // This is called after the document has loaded in its entirety
   // This guarantees that any elements we bind to will exist on the page
   // when we try to bind to them
-
+  colorPick();
   // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
 });
 
@@ -16,10 +16,14 @@ var down = false; //this will be connected to events when the mouse is pressed!
 
 canvas.addEventListener('mousemove', draw);
 canvas.addEventListener('mousedown', function () {
-	down = true //reassigns down to true while the mouse is down...so it draws
+	down = true; //reassigns down to true while the mouse is down...so it draws
 	context.beginPath(); //listens for beginning coordinates for new line
 	context.moveTo(xPosition, yPosition); //tracks the x and y coords as the down mouse drags across screen
 	canvas.addEventListener('mousemove', draw); //This means that drawing will only happen when the mouse is BOTH down and moving
+});
+
+canvas.addEventListener('mouseup', function () {
+	down = false; //resets down to false so that it stops drawing when mouse is no longer pressed!
 });
 
 function draw(event) {
@@ -32,3 +36,12 @@ function draw(event) {
   };
 };
 
+var colorPick = function() {
+  $('.button-color').on("click", function(event) {
+  	event.preventDefault();
+  	var color = $(this).val();
+  	context.strokeStyle = color;
+  	console.log("it worked!");
+
+  });
+};

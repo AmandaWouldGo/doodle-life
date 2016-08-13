@@ -47,11 +47,11 @@ canvas {
 /*consider adding a hover option with jquery rather than css!!*/
 
 #black { background: black; }
-#yellow { background: yellow; }
-#pink { background: pink; }
-#green { background: green; }
-#blue { background: blue; }
-#purple { background: purple; }
+#yellow { background: #f1c40f; }
+#red { background: #e74c3c; }
+#green { background: #2ecc71; }
+#blue { background: #2980b9; }
+#purple { background: #8e44ad; }
 
 #otherTools {
 	width: 35%;
