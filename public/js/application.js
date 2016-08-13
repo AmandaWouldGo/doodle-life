@@ -15,11 +15,20 @@ var down = false; //this will be connected to events when the mouse is pressed!
 //next... add eventListeners to canvas itself! This is different than adding event listers to the document!
 
 canvas.addEventListener('mousemove', draw);
+canvas.addEventListener('mousedown', function () {
+	down = true //reassigns down to true while the mouse is down...so it draws
+	context.beginPath(); //listens for beginning coordinates for new line
+	context.moveTo(xPosition, yPosition); //tracks the x and y coords as the down mouse drags across screen
+	canvas.addEventListener('mousemove', draw); //This means that drawing will only happen when the mouse is BOTH down and moving
+});
 
 function draw(event) {
   xPosition = event.clientX - canvas.offsetLeft; //sets the x position of the mouse as it moves along inside the canvas
   yPosition = event.clientY - canvas.offsetTop; //sets the y position of the mouse as it moves along inside the canvas
+
+  if(down == true) {
+  	context.lineTo(xPosition, yPosition); //this moves a line along as it is drawn with mousemove and mousedown
+  	context.stroke(); //This is actually what draws. Like the stroke of a pen!
+  };
 };
-
-
 
