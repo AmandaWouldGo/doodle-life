@@ -1,11 +1,37 @@
 <main class="user-home">
-	<h1 class="headlines">Welcome back to Doodle Life, <%= @user.username.capitalize %> </h1>
-	<br>
-	<h2>Where doodles are encouraged</h2>
-	<br>
-	<form action="/sessions/<%= @user.id %>" method="POST">
-		<input type="hidden" name="_method" value="DELETE">
-		<input type="submit" value="Logout">
-	</form>
-</main>
+    <h1 class="headlines">Welcome back to Doodle Life, <%= @user.username.capitalize %> </h1>
+    <h2>Where doodles are encouraged</h2>
+    <br>
+    <form action="/sessions/<%= @user.id %>" method="POST">
+        <input type="hidden" name="_method" value="DELETE">
+        <input type="submit" value="Logout">
+    </form>
+    <section>
+        <!-- This is where the drawing app will go!!!!! -->
+        <div id="drawingToolsLeft">
+            <!-- This is where the colors will go (they will need lots of css styling and maybe images) -->
+            <div id="colors">
+                <!-- This is where color buttons (shape of crayons?) will go! -->
+                <button id="black"></button>
+                <button id="yellow"></button>
+                <button id="pink"></button>
+            </div>
+            <div id="otherTools">
+                <!-- Here will lie the button that clears all doodles in one fell swoop -->
+                <button id="clearCanvas">clear all</button>
+            </div>
+        </div>
+        <div id="drawingToolsRight">
+            <!-- Actually, I will likely need two of these because I want them to go beside my canvas on both sides -->
+            <div id="colors">
+                <!-- This is where color buttons (shape of crayons?) will go! -->
+                <button id="green"></button>
+                <!-- buttons have ids for css styling -->
+                <button id="blue"></button>
+                <button id="purple"></button>
+            </div>
+        </div>
 
+        <canvas id="canvas" width="800" height="500"></canvas> <!--This is the actual canvas! Whoa!! -->
+    </section>
+</main>
