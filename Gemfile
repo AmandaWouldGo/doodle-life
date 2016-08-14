@@ -26,6 +26,8 @@ gem 'thin'
 
 gem 'unsplash'
 
+gem 'HTTParty'
+
 group :test do
   gem 'shoulda-matchers'
   gem 'rack-test'
