@@ -1,11 +1,12 @@
 <main class="user-home">
-    <h1 class="headlines">Welcome back to Doodle Life, <%= @user.username.capitalize %> </h1>
-    <h2>Where doodles are encouraged</h2>
-    <br>
-    <form action="/sessions/<%= @user.id %>" method="POST">
-        <input type="hidden" name="_method" value="DELETE">
-        <input type="submit" value="Logout">
-    </form>
+    <div id="homepage-container">
+        <h1 class="headlines">Welcome back to Doodle Life, <%= @user.username.capitalize %> </h1>
+        <h2 class="headlines">Where doodles are encouraged</h2>
+        <form action="/sessions/<%= @user.id %>" method="POST">
+            <input type="hidden" name="_method" value="DELETE">
+            <input type="submit" value="Logout">
+        </form>
+    </div>
     <section>
         <!-- This is where the drawing app will go!!!!! -->
         <div id="drawing-tools-left">

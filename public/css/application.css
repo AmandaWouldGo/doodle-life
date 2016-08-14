@@ -12,9 +12,15 @@ section {
 
 /* This sets the canvas! OMC!! */
 canvas {
+  /*background-image: */
   display: inline-block; /*This block makes it so I can make my divs and canvas side by side*/
   border: 1px solid black;
   margin: 10px auto 0px; /*This makes it so that it has a top margin of 10px, auto left/right margin and 0px for bottom*/ 
+}
+
+#homepage-container {
+	border: 1px solid red;
+	height: 180px;
 }
 
 #drawing-tools-left {

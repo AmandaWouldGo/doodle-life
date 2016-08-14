@@ -14,14 +14,20 @@ context.lineWidth = 5; //this sets the width of the drawing tool. Add additional
 var down = false; //this will be connected to events when the mouse is pressed!
 
 //next... add eventListeners to canvas itself! This is different than adding event listers to the document!
+$(canvas).mousedown(function(event) {
+	var mouseX = event.pageX - this.offsetLeft;
+	var mouseY = event.pageY - this.offsetTop;
 
-canvas.addEventListener('mousemove', draw);
-canvas.addEventListener('mousedown', function () {
-	down = true; //reassigns down to true while the mouse is down...so it draws
-	context.beginPath(); //listens for beginning coordinates for new line
-	context.moveTo(xPosition, yPosition); //tracks the x and y coords as the down mouse drags across screen
-	canvas.addEventListener('mousemove', draw); //This means that drawing will only happen when the mouse is BOTH down and moving
+	down = true;
+	context.beginPath();
 });
+canvas.addEventListener('mousemove', draw);
+// canvas.addEventListener('mousedown', function () {
+// 	down = true; //reassigns down to true while the mouse is down...so it draws
+// 	context.beginPath(); //listens for beginning coordinates for new line
+// 	context.moveTo(xPosition, yPosition); //tracks the x and y coords as the down mouse drags across screen
+// 	canvas.addEventListener('mousemove', draw); //This means that drawing will only happen when the mouse is BOTH down and moving
+// });
 
 canvas.addEventListener('mouseup', function () {
 	down = false; //resets down to false so that it stops drawing when mouse is no longer pressed!
@@ -48,7 +54,6 @@ var colorPick = function() {
 var clearAll = function() {
   $('#clear-canvas').mousedown(function(event) {
   	event.preventDefault();
-  	context.clearRect(0, 0, canvas.width, canvas.height)
-  	console.log("It is working!");
+  	context.clearRect(0, 0, canvas.width, canvas.height);
   });
-}
+};
