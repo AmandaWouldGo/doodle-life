@@ -22,6 +22,4 @@ end
 get '/users/:id' do
   @user = User.find(params[:id])
   erb :"users/show"
-
-  #cat logic can go here!
 end

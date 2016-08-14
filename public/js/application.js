@@ -57,3 +57,24 @@ var clearAll = function() {
   	context.clearRect(0, 0, canvas.width, canvas.height);
   });
 };
+
+
+// cat images via api!
+
+$(document).ready(function() {
+  $('#cat-image-button').on('click', newCatImg)
+});
+
+function newCatImg(event){
+  event.preventDefault()
+  var url = $(this).attr('href')
+  $.ajax({
+    url: url,
+    method: "GET"
+  })
+  .done(function(response){
+    console.log(response)
+    $('#cat-image').empty()
+    $('#cat-image').append(response)
+  })
+}

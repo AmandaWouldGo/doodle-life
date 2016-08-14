@@ -26,7 +26,7 @@ gem 'thin'
 
 gem 'unsplash'
 
-gem 'HTTParty'
+gem 'httparty'
 
 group :test do
   gem 'shoulda-matchers'

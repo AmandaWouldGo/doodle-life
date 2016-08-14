@@ -41,11 +41,11 @@ configure do
   set :views, File.join(Sinatra::Application.root, "app", "views")
 end
 
-Unsplash.configure do |config|
-  config.application_id = "UNSPLASH_ACCOUNT_SID"
-  config.application_secret = "UNSPLASH_AUTH_TOKEN"
-  config.application_redirect_uri = "https//doodle-life.herokuapp.com/oauth/callback"
-end
+# Unsplash.configure do |config|
+#   config.application_id = "UNSPLASH_ACCOUNT_SID"
+#   config.application_secret = "UNSPLASH_AUTH_TOKEN"
+#   config.application_redirect_uri = "https//doodle-life.herokuapp.com/oauth/callback"
+# end
 
 # Set up the controllers and helpers
 Dir[APP_ROOT.join('app', 'controllers', '*.rb')].each { |file| require file }
