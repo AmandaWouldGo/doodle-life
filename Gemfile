@@ -2,6 +2,8 @@ ruby '2.2.4'
 
 source 'https://rubygems.org'
 
+gem 'dotenv'
+
 # PostgreSQL driver
 gem 'pg'
 
