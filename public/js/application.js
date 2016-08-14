@@ -4,6 +4,8 @@ $(document).ready(function() {
   // when we try to bind to them
   colorPick();
   clearAll();
+  newCatImg();
+  $('#cat-image').on('click', 'img', moveCatImage)
   // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
 });
 
@@ -61,20 +63,38 @@ var clearAll = function() {
 
 // cat images via api!
 
-$(document).ready(function() {
-  $('#cat-image-button').on('click', newCatImg)
-});
+// $(document).ready(function() {
+//   // $('#cat-image-button').on('click', newCatImg)
+//   newCatImg();
+// });
 
-function newCatImg(event){
-  event.preventDefault()
-  var url = $(this).attr('href')
+function newCatImg(){
+  // event.preventDefault()
+  // var url = $(this).attr('href')
   $.ajax({
-    url: url,
-    method: "GET"
+    url: "http://thecatapi.com/api/images/get?format=xml&results_per_page=20",
+    method: "GET",
+    dataType: "xml"
   })
   .done(function(response){
-    console.log(response)
-    $('#cat-image').empty()
-    $('#cat-image').append(response)
-  })
+    // console.log(response)
+    $('#cat-image').empty();
+
+    console.log(response);
+   $(response).find("url").each( function () {
+      // $("#cat-image").append($(this).attr("src"));
+
+      url = $(this).text();
+      $('#cat-image').append("<img src=" + url + '>')
+    });
+  });
+}
+
+var moveCatImage = function(event) {
+  event.preventDefault();
+  var url = $(this).attr("src")
+
+  $(canvas).css("background-image", "url("+url+")");
+
+  console.log(url);
 }
