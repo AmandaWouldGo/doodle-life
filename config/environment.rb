@@ -22,6 +22,7 @@ require 'sinatra'
 require "sinatra/reloader" if development?
 
 require 'erb'
+require 'unsplash'
 
 # Some helper constants for path-centric logic
 APP_ROOT = Pathname.new(File.expand_path('../../', __FILE__))
@@ -38,6 +39,12 @@ configure do
 
   # Set the views to
   set :views, File.join(Sinatra::Application.root, "app", "views")
+end
+
+Unsplash.configure do |config|
+  config.application_id = "UNSPLASH_ACCOUNT_SID"
+  config.application_secret = "UNSPLASH_AUTH_TOKEN"
+  config.application_redirect_uri = "https//doodle-life.herokuapp.com/oauth/callback"
 end
 
 # Set up the controllers and helpers

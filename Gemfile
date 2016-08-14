@@ -24,6 +24,8 @@ gem 'pry-byebug'
 
 gem 'thin'
 
+gem 'unsplash'
+
 group :test do
   gem 'shoulda-matchers'
   gem 'rack-test'

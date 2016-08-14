@@ -18,9 +18,9 @@ canvas {
   margin: 10px auto 0px; /*This makes it so that it has a top margin of 10px, auto left/right margin and 0px for bottom*/ 
 }
 
-#homepage-container {
+#homepage-container, #unsplash {
 	border: 1px solid red;
-	height: 180px;
+	height: 140px;
 }
 
 #drawing-tools-left {
@@ -72,9 +72,6 @@ canvas {
 	background: #ffffff;
 
 }
-
-
-
 
 
 
