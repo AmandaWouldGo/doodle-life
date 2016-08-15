@@ -4,13 +4,12 @@
 /* This sets the section of the app with a bit of padding at the top and bottom. It has a border for now
 so that I know where I am on the page. I may change this or add a background color*/
 section {
-	max-width: 1500px;
+	max-width: 2000px;
 	width: 100%;
-	min-height: 1500px;
-	height: 100%;
-  padding-top: 20px;
-  padding-bottom: 20px;
+	min-height: 900px;
+	height: 80%;
   background: #34495e;
+  display: table;
 }
 
 /* This sets the canvas! OMC!! */
@@ -25,10 +24,11 @@ canvas {
 
 #logout-button {
 	color: black;
+	border:;
 }
 
 #homepage-container {
-	max-width: 1500px;
+	max-width: 2000px;
 	width: 100%;
 	height: 140px;
 	background: #2c3e50;
@@ -42,11 +42,12 @@ canvas {
 	width: 23.3333%;
 	display: inline-block;
 
-/*	border: 1px solid blue;*/ /*temp border so I can see what I am moving and where*/
+	/*border: 1px solid blue; temp border so I can see what I am moving and where*/
 }
 
 #drawing-tools-right {
 	/*Styling for drawing tools to the right of the canvas*/
+	
 	max-width: 350px;
 	width: 23.3333%;
 	display: inline-block;
@@ -54,16 +55,20 @@ canvas {
 
 #colors {
 	/*Styling for div where actual color buttons live*/
+	width: 23.3333%;
 }
 
 #colors button {
-	width: 20px;
-	height: 500px;
+	max-width: 30px;
+	min-width: 10px;
+	width: 13.333%;
+	max-height: 500px;
+	min-height: 120px;
+	height: 50%;
 	border: none;
 }
 
 /*consider adding a hover option with jquery rather than css!!*/
-
 #black { background: #000000; }
 #yellow { background: #f1c40f; }
 #red { background: #e74c3c; }
@@ -72,17 +77,20 @@ canvas {
 #purple { background: #8e44ad; }
 
 #other-tools {
-	width: 1000px;
+	max-width: 800px;
+	width: 90%;
+	margin: auto;
 	height: 30px;
-/*	padding: 2px;*/
-	background: black;
+	padding: 2px;
+  background: black;
 }
 
 #other-tools button {
-/*	margin-top: 5px;*/
+	margin-top: 5px;
 	margin-left: 5px;
 	background: #ffffff;
 }
+
 
 
 
