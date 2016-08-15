@@ -1,3 +1,7 @@
+* {
+	outline: 1px solid blue;
+}
+
 /* This is sets the edges of the app with no margins and no padding*/
 * {margin: 0; padding: 0; } 
 
@@ -9,7 +13,6 @@ section {
 	min-height: 900px;
 	height: 80%;
   background: #34495e;
-  display: table;
 }
 
 /* This sets the canvas! OMC!! */
@@ -24,7 +27,7 @@ canvas {
 
 #logout-button {
 	color: black;
-	border:;
+	border: none;
 }
 
 #homepage-container {
@@ -53,12 +56,28 @@ canvas {
 	display: inline-block;
 }
 
-#colors {
+#colors-left {
 	/*Styling for div where actual color buttons live*/
-	width: 23.3333%;
+/*	width: 23.3333%;*/
+	margin-left: 85%;
+	margin-right: 0px;
 }
 
+/*#colors {
+
+}*/
+
 #colors button {
+	max-width: 30px;
+	min-width: 10px;
+	width: 13.333%;
+	max-height: 500px;
+	min-height: 120px;
+	height: 50%;
+	border: none;
+}
+
+#colors-left button {
 	max-width: 30px;
 	min-width: 10px;
 	width: 13.333%;
