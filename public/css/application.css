@@ -4,39 +4,42 @@
 /* This sets the section of the app with a bit of padding at the top and bottom. It has a border for now
 so that I know where I am on the page. I may change this or add a background color*/
 section {
-  border: 1px solid purple;
   padding-top: 20px;
   padding-bottom: 20px;
   padding-left: 350px;
+  background: #34495e;
 }
 
 /* This sets the canvas! OMC!! */
 canvas {
   /*background-image: */
   display: inline-block; /*This block makes it so I can make my divs and canvas side by side*/
-  border: 1px solid black;
+  background: #ffffff;
   margin: 10px auto 0px; /*This makes it so that it has a top margin of 10px, auto left/right margin and 0px for bottom*/ 
 }
 
-#homepage-container, #unsplash {
-	border: 1px solid red;
+#logout-button {
+	color: black;
+}
+
+#homepage-container {
 	height: 140px;
+	background: #2c3e50;
+	color: #ecf0f1;
+	text-align: center;
 }
 
 #drawing-tools-left {
 	/*Styling for drawing tools to the left of the canvas*/
-	display: inline-block;
-	border: 1px solid blue; /*temp border so I can see what I am moving and where*/
-	width: 200px;
+	float: left;
+/*	border: 1px solid blue;*/ /*temp border so I can see what I am moving and where*/
 	margin: 2px auto;
 }
 
 #drawing-tools-right {
 	/*Styling for drawing tools to the right of the canvas*/
 	display: inline-block;
-	border: 1px solid blue; 
-	margin: 2px auto;
-	width: 200px;
+	margin: 2px;
 }
 
 #colors {
@@ -44,10 +47,9 @@ canvas {
 }
 
 #colors button {
-	width: 10%;
-	height: 100px;
-	margin-top: 300px;
-	padding: 2px;
+	width: 20px;
+	height: 500px;
+	border: none;
 }
 
 /*consider adding a hover option with jquery rather than css!!*/
@@ -60,7 +62,7 @@ canvas {
 #purple { background: #8e44ad; }
 
 #other-tools {
-	width: 35%;
+	width: 100%;
 	height: 30px;
 	padding: 2px;
 	background: black;
@@ -70,12 +72,7 @@ canvas {
 	margin-top: 5px;
 	margin-left: 5px;
 	background: #ffffff;
-
 }
-
-
-
-
 
 
 

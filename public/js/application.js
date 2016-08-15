@@ -5,7 +5,7 @@ $(document).ready(function() {
   colorPick();
   clearAll();
   newCatImg();
-  $('#cat-image').on('click', 'img', moveCatImage)
+  $('#cat-image').on('click', 'img', moveCatImage);
   // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
 });
 
@@ -17,13 +17,16 @@ var down = false; //this will be connected to events when the mouse is pressed!
 
 //next... add eventListeners to canvas itself! This is different than adding event listers to the document!
 $(canvas).mousedown(function(event) {
+  event.preventDefault();
 	var mouseX = event.pageX - this.offsetLeft;
 	var mouseY = event.pageY - this.offsetTop;
 
 	down = true;
 	context.beginPath();
+  context.moveTo(mouseX, mouseY);
+  $(canvas).on('mousemove', draw);
 });
-canvas.addEventListener('mousemove', draw);
+// canvas.addEventListener('mousemove', draw);
 // canvas.addEventListener('mousedown', function () {
 // 	down = true; //reassigns down to true while the mouse is down...so it draws
 // 	context.beginPath(); //listens for beginning coordinates for new line
@@ -31,9 +34,13 @@ canvas.addEventListener('mousemove', draw);
 // 	canvas.addEventListener('mousemove', draw); //This means that drawing will only happen when the mouse is BOTH down and moving
 // });
 
-canvas.addEventListener('mouseup', function () {
-	down = false; //resets down to false so that it stops drawing when mouse is no longer pressed!
+$(canvas).mouseup(function(event) {
+  event.preventDefault();
+  down = false;
 });
+// canvas.addEventListener('mouseup', function () {
+// 	down = false; //resets down to false so that it stops drawing when mouse is no longer pressed!
+// });
 
 function draw(event) {
   xPosition = event.clientX - canvas.offsetLeft; //sets the x position of the mouse as it moves along inside the canvas
@@ -72,7 +79,7 @@ function newCatImg(){
   // event.preventDefault()
   // var url = $(this).attr('href')
   $.ajax({
-    url: "http://thecatapi.com/api/images/get?format=xml&results_per_page=20",
+    url: "http://thecatapi.com/api/images/get?format=xml&size=full&results_per_page=20",
     method: "GET",
     dataType: "xml"
   })
@@ -85,7 +92,7 @@ function newCatImg(){
       // $("#cat-image").append($(this).attr("src"));
 
       url = $(this).text();
-      $('#cat-image').append("<img src=" + url + '>')
+      $('#cat-image').append("<img src=" + url + ">")
     });
   });
 }
@@ -95,6 +102,7 @@ var moveCatImage = function(event) {
   var url = $(this).attr("src")
 
   $(canvas).css("background-image", "url("+url+")");
-
-  console.log(url);
+  // $(canvas).css("background-size", "800x 500x");
+  // $(canvas).css("background-repeat", "no-repeat")
+ 
 }
