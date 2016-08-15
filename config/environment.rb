@@ -19,6 +19,8 @@ require 'active_record'
 require 'logger'
 
 require 'sinatra'
+require 'instagram'
+
 require "sinatra/reloader" if development?
 
 require 'erb'

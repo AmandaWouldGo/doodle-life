@@ -4,6 +4,8 @@ source 'https://rubygems.org'
 
 gem 'dotenv'
 
+gem 'instagram'
+
 # PostgreSQL driver
 gem 'pg'
 

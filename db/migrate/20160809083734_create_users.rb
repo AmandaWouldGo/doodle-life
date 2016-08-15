@@ -5,7 +5,11 @@ class CreateUsers < ActiveRecord::Migration
       t.string :full_name
       t.string :username
       t.string :email
-      t.string :password_digest
+      t.string :bio
+      t.string :website
+      t.string :profile_picture
+      t.string :password_hash
+      t.string :instagram_id
 
       t.timestamps null: false
     end
