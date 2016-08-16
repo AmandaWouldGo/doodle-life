@@ -69,7 +69,6 @@ var draw = function(event) {
 
 var colorPick = function() {
   $('.button-color').on("click", function(event) {
-    alert("this works!")
     event.preventDefault();
     var color = $(this).val(); // this = the button that was clicked and finds its value which is a hex color
     context.strokeStyle = color; // reset the stroke style color to hex color of button
@@ -87,7 +86,7 @@ function newCatImg(){
   $('#cat-image').on('click', 'img', moveCatImage);
   // Here is my API
   $.ajax({
-    url: "http://thecatapi.com/api/images/get?format=xml&size=full&results_per_page=20",
+    url: "http://thecatapi.com/api/images/get?format=xml&size=full&results_per_page=5",
     method: "GET",
     dataType: "xml"
   })
@@ -114,16 +113,20 @@ var moreCats = function() {
   $("#more-cats-button").on("click", function(event) {
     event.preventDefault();
     var verb = "GET"
-    var destination = "http://thecatapi.com/api/images/get?format=xml&size=full&results_per_page=20" 
+    var destination = "http://thecatapi.com/api/images/get?format=xml&size=full&results_per_page=5" 
     
     var request = $.ajax({
       method: verb,
-      url: destination
+      url: destination,
+      dataType: "xml"
     });
 
     request.done(function(response){
-      console.log($(response).find("url"));
-
+      $(response).find("url").each(function(){
+        $('#cat-image').empty();
+        url = $(this).text();
+        $('#cat-image').append("<img src=" + url + ">");
+      });
     });
   });
 }
