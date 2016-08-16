@@ -39,8 +39,8 @@ $(canvas).mouseup(function(event) {
 var draw = function(event) {
   event.preventDefault();
   var myOffset = $(this).offset();
-  mouseX = event.clientX - myOffset.left;
-  mouseY = event.clientY - myOffset.top;
+  var mouseX = event.clientX - myOffset.left;
+  var mouseY = event.clientY - myOffset.top;
 
   if(down == true) {
     context.lineTo(mouseX, mouseY);
