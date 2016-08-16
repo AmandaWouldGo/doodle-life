@@ -31,29 +31,10 @@ $('#canvas').mousedown(function(event) {
   $(canvas).mousemove(draw);
 });
 
-// canvas.addEventListener('mousedown', function () {
-//  down = true; //reassigns down to true while the mouse is down...so it draws
-//  context.beginPath(); //listens for beginning coordinates for new line
-//  context.moveTo(xPosition, yPosition); //tracks the x and y coords as the down mouse drags across screen
-//  canvas.addEventListener('mousemove', draw); //This means that drawing will only happen when the mouse is BOTH down and moving
-// });
-
 $(canvas).mouseup(function(event) {
   event.preventDefault();
   down = false;
 });
-// canvas.addEventListener('mouseup', function () {
-//  down = false; //resets down to false so that it stops drawing when mouse is no longer pressed!
-// });
-// function draw(event) {
-//   xPosition = event.clientX - canvas.offsetLeft; //sets the x position of the mouse as it moves along inside the canvas
-//   yPosition = event.clientY - canvas.offsetTop; //sets the y position of the mouse as it moves along inside the canvas
-
-//   if(down == true) {
-//    context.lineTo(xPosition, yPosition); //this moves a line along as it is drawn with mousemove and mousedown
-//    context.stroke(); //This is actually what draws. Like the stroke of a pen!
-//   };
-// };
 
 var draw = function(event) {
   event.preventDefault();
@@ -70,8 +51,8 @@ var draw = function(event) {
 var colorPick = function() {
   $('.button-color').on("click", function(event) {
     event.preventDefault();
-    var color = $(this).val(); // this = the button that was clicked and finds its value which is a hex color
-    context.strokeStyle = color; // reset the stroke style color to hex color of button
+    var color = $(this).val();
+    context.strokeStyle = color;
   });
 };
 
@@ -84,27 +65,28 @@ var clearAll = function() {
 
 function newCatImg(){
   $('#cat-image').on('click', 'img', moveCatImage);
-  // Here is my API
-  $.ajax({
+  var request = $.ajax({
     url: "http://thecatapi.com/api/images/get?format=xml&size=full&results_per_page=5",
     method: "GET",
     dataType: "xml"
-  })
-  .done(function(response){
-    $('#cat-image').empty();
+  });
+  
+  request.done(function(response){
 
+    $('#cat-image').empty();
     $(response).find("url").each( function () {
 
       url = $(this).text();
       $('#cat-image').append("<img src=" + url + ">")
+
     });
   });
 }
 
 var moveCatImage = function(event) {
+
   event.preventDefault();
   var url = $(this).attr("src")
-
   $(canvas).css("background-image", "url("+url+")");
  
 }
