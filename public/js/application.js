@@ -3,7 +3,7 @@ $(document).ready(function() {
   colorPick();
   clearAll();
   newCatImg();
-  $('#cat-image').on('click', 'img', moveCatImage);
+  moreCats();
 
   // getUserInfo();
 
@@ -69,6 +69,7 @@ var draw = function(event) {
 
 var colorPick = function() {
   $('.button-color').on("click", function(event) {
+    alert("this works!")
     event.preventDefault();
     var color = $(this).val(); // this = the button that was clicked and finds its value which is a hex color
     context.strokeStyle = color; // reset the stroke style color to hex color of button
@@ -83,6 +84,7 @@ var clearAll = function() {
 };
 
 function newCatImg(){
+  $('#cat-image').on('click', 'img', moveCatImage);
   // Here is my API
   $.ajax({
     url: "http://thecatapi.com/api/images/get?format=xml&size=full&results_per_page=20",
@@ -108,8 +110,26 @@ var moveCatImage = function(event) {
  
 }
 
-function getUserInfo(){
-  $.get("http://localhost:9393/user_info")
-  .done(function(info){
-  })
+var moreCats = function() {
+  $("#more-cats-button").on("click", function(event) {
+    event.preventDefault();
+    var verb = "GET"
+    var destination = "http://thecatapi.com/api/images/get?format=xml&size=full&results_per_page=20" 
+    
+    var request = $.ajax({
+      method: verb,
+      url: destination
+    });
+
+    request.done(function(response){
+      console.log($(response).find("url"));
+
+    });
+  });
 }
+
+// function getUserInfo(){
+//   $.get("http://localhost:9393/user_info")
+//   .done(function(info){
+//   })
+// }
