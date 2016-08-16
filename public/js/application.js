@@ -113,17 +113,17 @@ var moreCats = function() {
   $("#more-cats-button").on("click", function(event) {
     event.preventDefault();
     var verb = "GET"
-    var destination = "http://thecatapi.com/api/images/get?format=xml&size=full&results_per_page=5" 
+    // var destination = "http://thecatapi.com/api/images/get?format=xml&size=full&results_per_page=10" 
     
     var request = $.ajax({
       method: verb,
-      url: destination,
+      url: "http://thecatapi.com/api/images/get?format=xml&size=full&results_per_page=10",
       dataType: "xml"
     });
 
     request.done(function(response){
+      $('#cat-image').empty();
       $(response).find("url").each(function(){
-        $('#cat-image').empty();
         url = $(this).text();
         $('#cat-image').append("<img src=" + url + ">");
       });
