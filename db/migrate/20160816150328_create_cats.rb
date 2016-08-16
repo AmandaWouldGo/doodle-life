@@ -4,6 +4,7 @@ class CreateCats < ActiveRecord::Migration
       t.string :name
       t.integer :votes
 
-      t.timestamps
+      t.timestamps null:false
+    end
   end
 end

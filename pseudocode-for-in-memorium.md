@@ -2,7 +2,7 @@
     - name, votes, and timestamps
 * Utilize existing cats model to hold any validations necessary: name presence true
 * If it doesn't already exist, create a cat controller that has an index, a new and a create route
-* Add a #cat-form-link that pops up a partial with #cat-memorium-form
+* Add a #cat-form-link to  that pops up a partial with #cat-memorium-form
 * Create event listener for the #cat-form-link
 * Make #cat-form-link hide when #cat-memorium-form appears
 * Use ajax to connect the ajax event listener for #cat-form-link to get route for #cat-memorium-form
