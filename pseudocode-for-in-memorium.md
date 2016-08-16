@@ -4,10 +4,11 @@
 # * If it doesn't already exist, create a cat controller that has an index, a new and a create route
 # * Add a #add-cat-link to show.erb
  * that pops up a partial with #cat-memorium-form
-* Create event listener for the #add-cat-link
-* Make #add-cat-link hide when #cat-memorium-form appears
+# * Create event listener for the #add-cat-link
 * Use ajax to connect the ajax event listener for #add-cat-link to get route for #cat-memorium-form
 * Modify the controller to check for xhr for get route
+* Make #add-cat-link hide when #cat-memorium-form appears
+
 * Use ajax to connect the event listener for #cat-memorium-button and the controller
 * modify the controller to check for xhr for post route
 

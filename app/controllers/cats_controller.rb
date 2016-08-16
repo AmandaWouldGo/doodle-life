@@ -6,7 +6,13 @@ end
 
 # Cats NEW
 get '/cats/new' do
+  @cat = Cat.new
+  if request.xhr?
+    #pop up a form from a partial
+    
+  else
   erb :"cats/new"
+  end
 end
 
 # # Cats CREATE
