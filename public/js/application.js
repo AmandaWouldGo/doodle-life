@@ -70,7 +70,7 @@ function newCatImg(){
     method: "GET",
     dataType: "xml"
   });
-  
+
   request.done(function(response){
 
     $('#cat-image').empty();
@@ -93,13 +93,14 @@ var moveCatImage = function(event) {
 
 var moreCats = function() {
   $("#more-cats-button").on("click", function(event) {
+
     event.preventDefault();
     var verb = "GET"
-    // var destination = "http://thecatapi.com/api/images/get?format=xml&size=full&results_per_page=10" 
+    var destination = "http://thecatapi.com/api/images/get?format=xml&size=full&results_per_page=10" 
     
     var request = $.ajax({
       method: verb,
-      url: "http://thecatapi.com/api/images/get?format=xml&size=full&results_per_page=10",
+      url: destination,
       dataType: "xml"
     });
 
