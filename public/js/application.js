@@ -4,7 +4,7 @@ $(document).ready(function() {
   clearAll();
   newCatImg();
   moreCats();
-
+  addCatName();
   // getUserInfo();
 
 });
@@ -81,7 +81,7 @@ function newCatImg(){
 
     });
   });
-}
+};
 
 var moveCatImage = function(event) {
 
@@ -89,7 +89,7 @@ var moveCatImage = function(event) {
   var url = $(this).attr("src")
   $(canvas).css("background-image", "url("+url+")");
  
-}
+};
 
 var moreCats = function() {
   $("#more-cats-button").on("click", function(event) {
@@ -112,6 +112,13 @@ var moreCats = function() {
       });
     });
   });
+};
+
+var addCatName = function() {
+  $("#add-cat-link").on("click", function(event) {
+    event.preventDefault();
+    alert("This link hears you!");
+  })
 }
 
 // function getUserInfo(){
