@@ -10,8 +10,8 @@ so that I know where I am on the page. I may change this or add a background col
 section {
 	max-width: 2000px;
 	width: 100%;
-	min-height: 900px;
-	height: 80%;
+	min-height: 400px;
+	height: 60%;
   background: #34495e;
 }
 
@@ -58,7 +58,7 @@ h1 {
 	/*Styling for drawing tools to the right of the canvas*/
 	
 	max-width: 350px;
-	width: 23.3333%;
+	width: 18%;
 	display: inline-block;
 }
 
@@ -68,10 +68,6 @@ h1 {
 	margin-left: 85%;
 	margin-right: 0px;
 }
-
-/*#colors {
-
-}*/
 
 #colors button {
 	max-width: 30px;
@@ -115,8 +111,6 @@ h1 {
 	margin-left: 5px;
 	background: #ffffff;
 }
-
-
 
 
 
