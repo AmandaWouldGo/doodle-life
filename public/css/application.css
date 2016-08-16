@@ -1,57 +1,99 @@
+/** {
+	outline: 1px solid blue;
+}
+*/
 /* This is sets the edges of the app with no margins and no padding*/
 * {margin: 0; padding: 0; } 
 
 /* This sets the section of the app with a bit of padding at the top and bottom. It has a border for now
 so that I know where I am on the page. I may change this or add a background color*/
 section {
-  border: 1px solid purple;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  padding-left: 350px;
+	max-width: 2000px;
+	width: 100%;
+	min-height: 900px;
+	height: 80%;
+  background: #34495e;
 }
 
 /* This sets the canvas! OMC!! */
 canvas {
   /*background-image: */
+  max-width: 1000px;
+  width: 53.3333%;
   display: inline-block; /*This block makes it so I can make my divs and canvas side by side*/
-  border: 1px solid black;
-  margin: 10px auto 0px; /*This makes it so that it has a top margin of 10px, auto left/right margin and 0px for bottom*/ 
+  background: #ffffff;
+  margin: 10px 0px 0px; /*This makes it so that it has a top margin of 10px, auto left/right margin and 0px for bottom*/ 
+}
+
+#logout-button {
+	color: black;
+	border: none;
+}
+
+h1 {
+	position: relative;
+	top: 10px;
 }
 
 #homepage-container {
-	border: 1px solid red;
-	height: 180px;
+
+	max-width: 2000px;
+	width: 100%;
+	height: 140px;
+	background: #2c3e50;
+	color: #ecf0f1;
+	text-align: center;
 }
 
 #drawing-tools-left {
 	/*Styling for drawing tools to the left of the canvas*/
+	max-width: 350px;
+	width: 23.3333%;
 	display: inline-block;
-	border: 1px solid blue; /*temp border so I can see what I am moving and where*/
-	width: 200px;
-	margin: 2px auto;
+
+	/*border: 1px solid blue; temp border so I can see what I am moving and where*/
 }
 
 #drawing-tools-right {
 	/*Styling for drawing tools to the right of the canvas*/
+	
+	max-width: 350px;
+	width: 23.3333%;
 	display: inline-block;
-	border: 1px solid blue; 
-	margin: 2px auto;
-	width: 200px;
 }
 
-#colors {
+#colors-left {
 	/*Styling for div where actual color buttons live*/
+/*	width: 23.3333%;*/
+	margin-left: 85%;
+	margin-right: 0px;
 }
+
+/*#colors {
+
+}*/
 
 #colors button {
-	width: 10%;
-	height: 100px;
-	margin-top: 300px;
-	padding: 2px;
+	max-width: 30px;
+	min-width: 10px;
+	width: 13.333%;
+	max-height: 500px;
+	min-height: 120px;
+	height: 50%;
+	border: none;
+}
+
+#colors-left button {
+	max-width: 30px;
+	min-width: 10px;
+	width: 13.333%;
+	max-height: 500px;
+	min-height: 120px;
+	height: 50%;
+	border: none;
 }
 
 /*consider adding a hover option with jquery rather than css!!*/
-
 #black { background: #000000; }
 #yellow { background: #f1c40f; }
 #red { background: #e74c3c; }
@@ -60,24 +102,19 @@ canvas {
 #purple { background: #8e44ad; }
 
 #other-tools {
-	width: 35%;
+	max-width: 800px;
+	width: 90%;
+	margin: auto;
 	height: 30px;
 	padding: 2px;
-	background: black;
+  background: black;
 }
 
 #other-tools button {
 	margin-top: 5px;
 	margin-left: 5px;
 	background: #ffffff;
-
 }
-
-
-
-
-
-
 
 
 

@@ -4,6 +4,8 @@ source 'https://rubygems.org'
 
 gem 'dotenv'
 
+gem 'instagram'
+
 # PostgreSQL driver
 gem 'pg'
 
@@ -23,6 +25,10 @@ gem 'bcrypt'
 gem 'pry-byebug'
 
 gem 'thin'
+
+gem 'unsplash'
+
+gem 'httparty'
 
 group :test do
   gem 'shoulda-matchers'

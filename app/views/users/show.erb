@@ -1,29 +1,26 @@
 <main class="user-home">
+
     <div id="homepage-container">
         <h1 class="headlines">Welcome back to Doodle Life, <%= @user.username.capitalize %> </h1>
         <h2 class="headlines">Where doodles are encouraged</h2>
-        <form action="/sessions/<%= @user.id %>" method="POST">
+        <form id="logout-button" action="/sessions/<%= @user.id %>" method="POST">
             <input type="hidden" name="_method" value="DELETE">
             <input type="submit" value="Logout">
         </form>
     </div>
     <section>
         <!-- This is where the drawing app will go!!!!! -->
-        <div id="drawing-tools-left">
+        <div class="column" id="drawing-tools-left">
             <!-- This is where the colors will go (they will need lots of css styling and maybe images) -->
-            <div id="colors">
+            <div id="colors-left">
                 <!-- This is where color buttons (shape of crayons?) will go! -->
                 <button class="button-color" value="#000000" id="black"></button>
                 <button class="button-color" value="#f1c40f" id="yellow"></button>
                 <button class="button-color" value="#e74c3c" id="red"></button>
             </div>
-            <div id="other-tools">
-                <!-- Here will lie the button that clears all doodles in one fell swoop -->
-                <button id="clear-canvas">clear all</button>
-            </div>
         </div>
-        <canvas id="canvas" width="800" height="500"></canvas> <!--This is the actual canvas! Whoa!! -->
-        <div id="drawing-tools-right">
+        <canvas class="column" id="canvas" width="800" height="500"></canvas> <!--This is the actual canvas! Whoa!! -->
+        <div class="column" id="drawing-tools-right">
             <!-- Actually, I will likely need two of these because I want them to go beside my canvas on both sides -->
           <div id="colors">
             <!-- This is where color buttons (shape of crayons?) will go! -->
@@ -33,5 +30,12 @@
             <button class="button-color" value="#8e44ad" id="purple"></button>
           </div>
         </div>
+        <div id="other-tools">
+            <!-- Here will lie the button that clears all doodles in one fell swoop -->
+            <button id="clear-canvas">clear all</button>
+        </div>
     </section>
+    <div id="cat-image">
+
+    </div>
 </main>

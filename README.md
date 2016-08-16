@@ -1,30 +1,31 @@
-> **Note**: This branch (master) contains a skeleton without any app code, perfect for creating a _new_ application or challenge. If you're looking for an example app built with this skeleton, take a look at the [example](/../..//tree/example) branch which includes basic CRUD and RSpec tests.
+#Application: DoodleLife
 
-### Purpose
-The Sinatra Skeleton:
+Purpose: Allow users to draw on pictures
 
-1. Provides a foundation for building challenges or creating a new Sinatra application.
-2. Demonstrates a reasonable set of practices around building Sinatra applications.
-3. Eases the transition to Rails for Dev Bootcamp students
+#MVP stories:
 
-### Quickstart
+User can register for DoodleLife
+User can login to DoodleLife
+User can draw in an HTML canvas environment
+User can add cat pics to HTML canvas and draw on them (aka... turn them into dogs, bc dogs are better than cats)
+User can see different cats for each log in (or each page refresh)
+Users sees some scalability of site
 
-1.  `bundle install`
-2.  `shotgun config.ru`
+#Current Issues: 
+1. mouseX and mouseY offset incorrect, currently researching redraw() as a possible solution
+2. margin, position and sizing issues with color buttons. 
 
-As needed, create models & migrations with the `rake` tasks:
 
-```
-rake generate:migration  # Create an empty migration in db/migrate, e.g., rake generate:migration NAME=create_tasks
-rake generate:model      # Create an empty model in app/models, e.g., rake generate:model NAME=User
-```
+#Next release (way cooler than cats):
+User can log in via instagram Oauth
+User can select from own instagram photos and draw on them
 
-### Contributing
+#Stretch:
+User can capture their drawings and save them (either to db or instagram)
+User sees a fully scalable site with clean CSS styling
 
-We would love for you to help make the skeleton more awesome, There are three ways to contribute:
+#Key learning:
+HTML5 Canvas 
+The Cat API
+(coming soon) Instagram Oauth
 
-1. Ask for a bug fix or enhancement!
-2. Submit a pull request for a bug fix or enhancement!
-3. Code review an open pull request!
-
-Be prepared to give and receive specific, actionable, and kind feedback!
