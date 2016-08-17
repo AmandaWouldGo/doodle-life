@@ -129,7 +129,10 @@ var addCatName = function() {
     });
 
     request.done(function(response){
-      console.log(response);
+      
+      $("#cat-memorium-container").html(response);
+      // $("#add-cat-link").hide();
+      // $("cat-memorium-container").append("#new-cat-form");
     })
 
     // alert("This link hears you!");
