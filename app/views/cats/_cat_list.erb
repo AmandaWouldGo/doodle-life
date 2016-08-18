@@ -2,6 +2,8 @@
 <h3>A list of cats you've doodled and named</h3>
 <ul id="cat-list">
 	<% @cats.each do |cat| %>
-		<li><%= cat.name %>  <%= cat.created_at %></li>
+		<% cat_time = cat.created_at %>
+		<% cat_time_string = cat_time.strftime("Doodle'Lived' on %F") %>
+		<li><%= cat.name %>  <%= cat_time_string %></li>
 	<% end %>
 </ul>
