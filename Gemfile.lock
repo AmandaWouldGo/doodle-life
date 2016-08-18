@@ -135,6 +135,7 @@ DEPENDENCIES
   faker
   httparty
   instagram
+  json
   pg
   pry-byebug
   rack-test

@@ -30,6 +30,10 @@ gem 'unsplash'
 
 gem 'httparty'
 
+gem 'faker'
+
+gem 'json'
+
 group :test do
   gem 'shoulda-matchers'
   gem 'rack-test'
