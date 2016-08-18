@@ -1,7 +1,7 @@
-# Cats INDEX
+# # # Cats INDEX
 # get '/cats' do
 #   @cats = Cat.all
-#   redirect "/cats/_cat_list"
+#   erb :"/cats/_cat_list"
 # end
 
 # Cats NEW
@@ -18,11 +18,17 @@ end
 # # Cats CREATE
 post '/cats' do
   @cat = Cat.new(params[:cat])
-
   if @cat.save
-    redirect '/cats'
+    if request.xhr?
+      @cats = Cat.all
+
+      page = erb :"cats/_cat_list", layout: false, locals: {cats: @cats}
+
+      json cats: @cats, page: page
+    else
+      erb :'cats/new'
+    end
   else
-    erb :'cats/new'
+      erb :'cats/new'
   end
-  
 end

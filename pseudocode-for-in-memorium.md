@@ -9,7 +9,7 @@
 * Modify the controller to check for xhr for get route
 * Make #add-cat-link hide when #new-cat-form appears
 
-* Use ajax to connect the event listener for #cat-memorium-button and the controller
+* Use ajax to connect the event listener for #add-cat and the controller
 * modify the controller to check for xhr for post route
 
 * Make #new-cat-form hide and #add-cat-link show when form is submitted

@@ -4,6 +4,7 @@ $(document).ready(function() {
   clearAll();
   newCatImg();
   moreCats();
+  findCatForm();
   addCatName();
   // getUserInfo();
 
@@ -116,7 +117,7 @@ var moreCats = function() {
   });
 };
 
-var addCatName = function() {
+var findCatForm = function() {
   $("#add-cat-link").on("click", function(event) {
     event.preventDefault();
 
@@ -129,13 +130,38 @@ var addCatName = function() {
     });
 
     request.done(function(response){
-      $("#cat-memorium-container").html(response);
+      $("#cat-memorium-container").append(response);
       $("#add-cat-link").hide();
-      // $("cat-memorium-container").append("#new-cat-form");
-    })
+    });
+  });
+};
 
-    // alert("This link hears you!");
-  })
+var addCatName = function() {
+  $(".cat-memorium-container").on("submit", "form", function(event){
+    event.preventDefault();
+    alert("this worked!")
+
+    var verb = $(this).attr("method");
+    var destination = $(this).attr("action");
+    console.log(verb)
+    console.log(destination)
+    var data = $(this).serialize();
+
+    var request = $.ajax({
+
+      method: verb,
+      url: destination,
+      data: data,
+      dataType: "json"
+    });
+
+    request.done(function(response) {
+      console.log(response)
+      $(".cat-memorium-container").append(response.page);
+      $("#add-cat-link").show();
+      $("form").hide();
+    })
+  });
 }
 
 // function getUserInfo(){
