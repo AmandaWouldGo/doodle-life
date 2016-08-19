@@ -1,45 +1,44 @@
 <main class="user-home">
 
     <div id="homepage-container">
-        <h1 class="headlines">Welcome back to Doodle Life, <%= @user.username.capitalize %> </h1>
-        <h2 class="headlines">Where doodles are encouraged</h2>
+
+        <h1 class="headlines">Welcome back to DoodleLife, <%= @user.username.capitalize %> </h1>
+        <h2 class="headlines">A drawing app for dog people</h2>
         <form id="logout-button" action="/sessions/<%= @user.id %>" method="POST">
             <input type="hidden" name="_method" value="DELETE">
             <input type="submit" value="Logout">
         </form>
+
     </div>
     <section>
-        <!-- This is where the drawing app will go!!!!! -->
+
         <div class="column" id="drawing-tools-left">
-            <!-- This is where the colors will go (they will need lots of css styling and maybe images) -->
             <div id="colors-left">
-                <!-- This is where color buttons (shape of crayons?) will go! -->
-                <button class="button-color" value="#000000" id="black"></button>
-                <button class="button-color" value="#f1c40f" id="yellow"></button>
-                <button class="button-color" value="#e74c3c" id="red"></button>
             </div>
         </div>
-        <canvas class="column" id="canvas" width="800" height="500"></canvas> <!--This is the actual canvas! Whoa!! -->
+        <canvas class="column" id="canvas" width="800" height="500"></canvas> 
         <div class="column" id="drawing-tools-right">
-            <!-- Actually, I will likely need two of these because I want them to go beside my canvas on both sides -->
           <div id="colors">
-            <!-- This is where color buttons (shape of crayons?) will go! -->
+            <button class="button-color" value="#000000" id="black"></button>
+            <button class="button-color" value="#f1c40f" id="yellow"></button>
+            <button class="button-color" value="#e74c3c" id="red"></button>
            	<button class="button-color" value="#2ecc71" id="green"></button>
-              <!-- buttons have ids for css styling -->
             <button class="button-color" value="#2980b9" id="blue"></button>
             <button class="button-color" value="#8e44ad" id="purple"></button>
           </div>
         </div>
         <div id="other-tools">
-            <!-- Here will lie the button that clears all doodles in one fell swoop -->
             <button id="clear-canvas">clear all</button>
         </div>
         <button id="more-cats-button">More cats!</button>
+
     </section>
     <div id="cat-image"></div>
     <div class="cat-memorium-container" id="cat-memorium-container">
-        <p>Currently, the Doodle...<em>"Life"</em> of a cat pic is short. It only lasts between now and when you refresh the page or logout and login again</p>
-        <p>Add the name of a cat below to save the memory (a.k.a. you can save the name but not the photo or the drawing)</p>
+
+        <p>The Doodle...<em>"Life"</em> of your cat pic only lasts between now and when you refresh the page</p>
+        <p>Add your cat's name below to save the memory</p>
+        <p><strong>(a.k.a. you can save the name but not the photo or the drawing)</strong></p><br>
         <a id="add-cat-link" href="/cats/new" method="GET">Add your cat's name</a>
         
     </div>
