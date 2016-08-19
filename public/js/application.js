@@ -6,11 +6,10 @@ $(document).ready(function() {
   moreCats();
   findCatForm();
   addCatName();
-  // getUserInfo();
 
 });
 
-var canvas = document.getElementById('canvas'); //this gets the canvas element. I am setting it to a variable so that I can call canvas functions on it!
+var canvas = document.getElementById('canvas'); 
 var context = canvas.getContext('2d'); 
 var canvasWidth = canvas.width;
 var canvasHeight = canvas.height;
@@ -139,12 +138,9 @@ var findCatForm = function() {
 var addCatName = function() {
   $(".cat-memorium-container").on("submit", "form", function(event){
     event.preventDefault();
-    alert("this worked!")
 
     var verb = $(this).attr("method");
     var destination = $(this).attr("action");
-    console.log(verb)
-    console.log(destination)
     var data = $(this).serialize();
 
     var request = $.ajax({
@@ -156,16 +152,9 @@ var addCatName = function() {
     });
 
     request.done(function(response) {
-      console.log(response)
       $(".cat-memorium-container").append(response.page);
       $("#add-cat-link").show();
-      $("form").hide();
+      $(".new-cat-form").hide();
     })
   });
 }
-
-// function getUserInfo(){
-//   $.get("http://localhost:9393/user_info")
-//   .done(function(info){
-//   })
-// }
