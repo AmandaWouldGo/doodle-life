@@ -4,6 +4,7 @@
 
         <h1 class="headlines">Welcome back to DoodleLife, <%= @user.username.capitalize %> </h1>
         <h2 class="headlines">A drawing app for dog people</h2>
+        <h4 class="headlines">Your doodles turn cats into dogs or bunnies or firetrucks</h4>
         <form id="logout-button" action="/sessions/<%= @user.id %>" method="POST">
             <input type="hidden" name="_method" value="DELETE">
             <input type="submit" value="Logout">
