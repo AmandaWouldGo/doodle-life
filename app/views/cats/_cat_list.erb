@@ -1,0 +1,12 @@
+<h1>In Memorium</h1>
+<table id="cat-list">
+	<% @cats.each do |cat| %>
+		<% cat_time = cat.created_at %>
+		<% cat_time_string = cat_time.strftime("Doodle'Lived' on %F") %>
+		<tr>
+			<td><%= cat.name %></td>
+			<td><%= cat_time_string %></td>
+		</tr>
+	<% end %>
+<table>
+

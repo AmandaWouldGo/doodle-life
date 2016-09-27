@@ -10,8 +10,8 @@ so that I know where I am on the page. I may change this or add a background col
 section {
 	max-width: 2000px;
 	width: 100%;
-	min-height: 900px;
-	height: 80%;
+	min-height: 400px;
+	height: 60%;
   background: #34495e;
 }
 
@@ -28,6 +28,7 @@ canvas {
 #logout-button {
 	color: black;
 	border: none;
+	padding: 10px;
 }
 
 h1 {
@@ -48,7 +49,7 @@ h1 {
 #drawing-tools-left {
 	/*Styling for drawing tools to the left of the canvas*/
 	max-width: 350px;
-	width: 23.3333%;
+	width: 15%;
 	display: inline-block;
 
 	/*border: 1px solid blue; temp border so I can see what I am moving and where*/
@@ -57,8 +58,13 @@ h1 {
 #drawing-tools-right {
 	/*Styling for drawing tools to the right of the canvas*/
 	
+<<<<<<< HEAD
 	max-width: 200px;
 	width: 23.3333%;
+=======
+	max-width: 350px;
+	width: 18%;
+>>>>>>> 56a151d8f0d9364168407ff22cd02e15ae7c7a4e
 	display: inline-block;
 }
 
@@ -69,17 +75,13 @@ h1 {
 
 }
 
-/*#colors {
-
-}*/
-
 #colors button {
 	max-width: 30px;
 	min-width: 10px;
 	width: 13.333%;
-	max-height: 500px;
-	min-height: 120px;
-	height: 50%;
+	height: 300px;
+/*	min-height: 120px;
+	height: 50%;*/
 	border: none;
 }
 
@@ -116,11 +118,15 @@ h1 {
 	background: #ffffff;
 }
 
+.cat-memorium-container {
+	text-align: center;
+	padding-bottom: 100px; 
+	padding-top: 25px;
+}
 
-
-
-
-
+#cat-list {
+	margin: auto;
+}
 
 
 
