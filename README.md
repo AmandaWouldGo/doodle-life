@@ -1,4 +1,4 @@
-#Application: DoodleLife
+#Web Application: DoodleLife, a solo project
 
 ![Doodle Life](DoodleLifeHeroku.png)
 
