@@ -1,7 +1,7 @@
 /** {
 	outline: 1px solid blue;
-}
-*/
+}*/
+
 /* This is sets the edges of the app with no margins and no padding*/
 * {margin: 0; padding: 0; } 
 
@@ -58,8 +58,13 @@ h1 {
 #drawing-tools-right {
 	/*Styling for drawing tools to the right of the canvas*/
 	
+<<<<<<< HEAD
+	max-width: 200px;
+	width: 23.3333%;
+=======
 	max-width: 350px;
 	width: 18%;
+>>>>>>> 56a151d8f0d9364168407ff22cd02e15ae7c7a4e
 	display: inline-block;
 }
 
@@ -67,7 +72,7 @@ h1 {
 	/*Styling for div where actual color buttons live*/
 /*	width: 23.3333%;*/
 	margin-left: 85%;
-	margin-right: 0px;
+
 }
 
 #colors button {
